@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shunyao Wu | 吴舜尧</title>
+<title>Longqiu Wu | 吴龙秋</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
 <style>
     /* ================= 基础 ================= */
@@ -27,7 +27,7 @@
     }
     .nav-inner {
         max-width: 980px; margin: 0 auto;
-        padding: 15px 28px;
+        padding: 15px 24px;
         display: flex; align-items: center; justify-content: space-between;
         flex-wrap: wrap; gap: 10px;
     }
@@ -35,10 +35,10 @@
         color: #fff; font-weight: 700;
         font-size: 1.08rem; letter-spacing: .5px;
     }
-    .nav-links { list-style: none; display: flex; gap: 30px; }
+    .nav-links { list-style: none; display: flex; gap: 20px; flex-wrap: wrap; }
     .nav-links a {
-        color: #dfe6e9; font-size: .8rem; font-weight: 600;
-        letter-spacing: 1.2px; text-decoration: none;
+        color: #dfe6e9; font-size: .76rem; font-weight: 600;
+        letter-spacing: 1px; text-decoration: none;
         transition: color .2s;
     }
     .nav-links a:hover { color: #74b9ff; }
@@ -47,8 +47,7 @@
     .hero {
         position: relative;
         height: 56vh; min-height: 340px; max-height: 560px;
-        /* TODO: 替换成你自己的校园照片，直接换 url() 里的地址即可 */
-        background: url('https://images.unsplash.com/photo-1519677100203-a0e668c92439?auto=format&fit=crop&w=1920&q=80')
+        background: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1920&q=80')
                     center / cover no-repeat;
         display: flex; align-items: flex-end;
     }
@@ -65,7 +64,8 @@
         padding: 0 48px 52px;
         text-shadow: 0 2px 14px rgba(0, 0, 0, .55);
     }
-    /* 右下角头像插画 */
+
+    /* ===== 个人照片位（Hero 右下角圆形头像） ===== */
     .avatar {
         position: absolute; right: 56px; bottom: -38px; z-index: 3;
         width: 170px; height: 170px;
@@ -75,12 +75,26 @@
         background: #b6e3f4;
         object-fit: cover;
     }
+    /* 照片占位样式：放入 photo.jpg 并替换占位块后自动失效 */
+    .avatar-ph {
+        display: flex; align-items: center; justify-content: center;
+        text-align: center;
+        background: rgba(255, 255, 255, .95);
+        border: 4px dashed #1a5fb4;
+        color: #1a5fb4;
+    }
+    .avatar-ph strong { display: block; font-size: .92rem; letter-spacing: 1px; }
+    .avatar-ph small {
+        display: block; font-size: .66rem; color: #5c7fae;
+        line-height: 1.55; margin-top: 6px; font-weight: 500;
+    }
 
     /* ================= 主内容区 ================= */
     main { max-width: 820px; margin: 0 auto; padding: 88px 26px 40px; }
     .name { color: #1a5fb4; font-size: 1.95rem; font-weight: 700; }
+    .name-sub { color: #7f8c8d; font-size: .92rem; margin-top: 2px; }
 
-    .social-btns { display: flex; gap: 12px; flex-wrap: wrap; margin: 18px 0 28px; }
+    .social-btns { display: flex; gap: 12px; flex-wrap: wrap; margin: 18px 0 26px; }
     .btn {
         display: inline-block;
         padding: 7px 20px; border-radius: 5px;
@@ -103,9 +117,56 @@
         border-left: 5px solid #1a5fb4; padding-left: 13px;
         margin-bottom: 20px; letter-spacing: .5px;
     }
-    .pub-list, .award-list { padding-left: 22px; }
-    .pub-list li, .award-list li { margin-bottom: 14px; }
+
+    /* ===== News 列表 ===== */
+    .news-list { list-style: none; }
+    .news-list li { margin-bottom: 10px; color: #555; }
+    .news-list .date {
+        display: inline-block; min-width: 72px;
+        font-weight: 700; color: #1a5fb4; margin-right: 10px;
+    }
+
+    /* ===== 论文列表与状态徽标 ===== */
+    .pub-list { padding-left: 22px; }
+    .pub-list li { margin-bottom: 22px; }
     .pub-list em { color: #666; }
+    .pub-note { color: #555; font-size: .92rem; margin: 6px 0 0; }
+    .badge {
+        display: inline-block; margin-left: 8px; padding: 1px 10px;
+        border-radius: 10px; font-size: .72rem; font-weight: 700;
+        vertical-align: 2px; letter-spacing: .3px;
+    }
+    .badge-green  { background: #e6f7ee; color: #1e8e5a; border: 1px solid #bfe8d4; }
+    .badge-orange { background: #fff4e5; color: #c05621; border: 1px solid #fad9b0; }
+
+    /* ===== 经历 / 项目条目 ===== */
+    .entry { margin-bottom: 28px; }
+    .entry:last-child { margin-bottom: 0; }
+    .entry h3 { font-size: 1.02rem; color: #2d3436; }
+    .entry h3 .role { color: #1a5fb4; font-weight: 700; }
+    .entry .meta { color: #7f8c8d; font-size: .84rem; margin: 2px 0 8px; }
+    .entry ul { padding-left: 20px; color: #555; font-size: .95rem; }
+    .entry ul li { margin-bottom: 5px; }
+
+    /* ===== 教育经历 ===== */
+    .edu-list { list-style: none; }
+    .edu-list li { margin-bottom: 18px; font-size: 1.02rem; }
+    .edu-list strong { color: #2d3436; }
+    .edu-list .meta { color: #7f8c8d; font-size: .88rem; margin-top: 2px; }
+
+    /* ===== 获奖列表 ===== */
+    .award-list { padding-left: 22px; }
+    .award-list li { margin-bottom: 10px; }
+
+    /* ===== 技能标签 ===== */
+    .skill-group { margin-bottom: 18px; }
+    .skill-group h3 { font-size: .98rem; color: #2d3436; margin-bottom: 8px; }
+    .pills { display: flex; flex-wrap: wrap; gap: 8px; }
+    .pill {
+        background: #eef3fb; color: #1a5fb4;
+        border: 1px solid #d5e2f6; border-radius: 14px;
+        padding: 2px 13px; font-size: .8rem; font-weight: 600;
+    }
 
     footer {
         border-top: 1px solid #eee; color: #999;
@@ -116,9 +177,11 @@
     /* ================= 移动端适配 ================= */
     @media (max-width: 640px) {
         .nav-inner { flex-direction: column; align-items: flex-start; padding: 12px 20px; }
-        .nav-links { gap: 18px; flex-wrap: wrap; }
+        .nav-links { gap: 14px; }
         .hero-title { padding: 0 24px 40px; }
         .avatar { width: 110px; height: 110px; right: 22px; bottom: -26px; border-width: 4px; }
+        .avatar-ph strong { font-size: .72rem; }
+        .avatar-ph small { font-size: .56rem; }
         main { padding: 68px 20px 36px; }
     }
 </style>
@@ -128,75 +191,245 @@
 <!-- ===================== 顶部导航栏 ===================== -->
 <nav>
     <div class="nav-inner">
-        <span class="brand">Shunyao Wu (吴舜尧)</span>
+        <span class="brand">Longqiu Wu (吴龙秋)</span>
         <ul class="nav-links">
             <li><a href="#home">HOME</a></li>
-            <li><a href="#publications">SELECTED PUBLICATIONS</a></li>
-            <li><a href="#awards">SELECTED AWARDS</a></li>
+            <li><a href="#news">NEWS</a></li>
+            <li><a href="#publications">PUBLICATIONS</a></li>
+            <li><a href="#projects">PROJECTS</a></li>
+            <li><a href="#experience">EXPERIENCE</a></li>
+            <li><a href="#education">EDUCATION</a></li>
+            <li><a href="#awards">AWARDS</a></li>
+            <li><a href="#skills">SKILLS</a></li>
         </ul>
     </div>
 </nav>
 
 <!-- ===================== Hero 横幅 ===================== -->
 <header id="home" class="hero">
-    <h1 class="hero-title">Computer Science</h1>
-    <!-- TODO: 替换成你自己的头像插画（截图同款为蓝绿色调人物插画） -->
-    <img class="avatar"
-         src="https://api.dicebear.com/9.x/notionists/svg?seed=Shunyao&backgroundColor=b6e3f4"
-         alt="个人头像插画">
+    <h1 class="hero-title">Bridging AI and Geophysics</h1>
+
+    <!-- TODO: 替换为你的个人照片：将照片命名为 photo.jpg 放到本页面同一目录，
+         然后把下面整个 <div class="avatar avatar-ph"> ... </div> 替换为：
+         <img class="avatar" src="photo.jpg" alt="吴龙秋个人照片"> -->
+    <div class="avatar avatar-ph">
+        <span>
+            <strong>个人照片</strong>
+            <small>将 photo.jpg 放入本目录<br>后替换此占位块</small>
+        </span>
+    </div>
 </header>
 
 <!-- ===================== 主内容区 ===================== -->
 <main>
-    <h1 class="name">Shunyao Wu | 吴舜尧</h1>
+    <h1 class="name">Longqiu Wu | 吴龙秋</h1>
+    <p class="name-sub">南昌大学 计算机技术 硕士研究生（2024 – 2027）· 2027 届应届毕业生</p>
 
-    <!-- TODO: 替换成你自己的主页链接 -->
     <div class="social-btns">
-        <a class="btn btn-gray" href="https://www.zhihu.com/people/bruceqd">bruceqd</a>
-        <a class="btn btn-blue" href="https://github.com/beingmath">github</a>
+        <a class="btn btn-blue" href="mailto:2420472633@qq.com">Email：2420472633@qq.com</a>
+        <a class="btn btn-gray" href="tel:18166041021">Tel：18166041021</a>
+        <!-- TODO: 如需提供在线简历，将 PDF 复制到本目录并取消下行注释 -->
+        <!-- <a class="btn btn-gray" href="CV.pdf" target="_blank">Curriculum Vitae</a> -->
     </div>
 
-    <!-- TODO: 替换成你自己的个人简介 -->
     <p class="bio">
-        我目前就读于 XX 大学计算机科学专业（Computer Science），主要研究方向为<strong>数据挖掘</strong>与
-        <strong>机器学习</strong>。在校期间积极参加各类国际数据挖掘竞赛，包括
-        <strong>KDD CUP</strong>、<strong>WSDM CUP</strong>、CIKM CUP 等，多次取得前三名的成绩。
-        同时也是 <a href="https://www.kaggle.com/rankings" target="_blank" rel="noopener">[Kaggle Expert]</a>，
-        目前 Kaggle 全球排名前 2%。
+        我是吴龙秋，南昌大学计算机技术专业全日制硕士研究生，研究方向为<strong>人工智能与地球物理的交叉领域</strong>，
+        聚焦基于<strong>冷扩散模型（Cold Diffusion）与扩散 Transformer（DiT）的地震全波形反演</strong>。
+        目前以第一作者身份主研国家自然科学基金项目，提出融合确定性高斯平滑物理先验与条件扩散
+        Transformer 的高效地下速度建模框架，在 OpenFWI 数据集上实现 50 倍推理加速；研究成果已被
+        <strong>ICEEG 2026</strong> 录用，第一作者 SCI 论文在投 <strong>IEEE TGRS</strong>。
+        此前曾先后就职于上海钢银与江西博微，担任 Java 开发工程师，具备从微服务底座、CI/CD
+        平台到云原生运维的完整工程实践经验。
     </p>
 
     <ul class="refs">
-        <li><span class="tag">[知乎]</span> 个人知乎主页，持续分享数据挖掘竞赛复盘与机器学习学习笔记。</li>
-        <li><span class="tag">[B站]</span> 个人 B 站频道，发布竞赛讲解视频与算法教程。</li>
-        <li><span class="tag">[GitHub]</span> 开源项目与常用工具代码仓库。</li>
+        <li><span class="tag">[研究兴趣]</span> 冷扩散模型、地震全波形反演（FWI）、生成式 AI、AI Agent。</li>
+        <li><span class="tag">[基金支持]</span> 国家自然科学基金项目（Grant No. 42304158）、江西省自然科学基金项目（Grant No. 20232BAB212005）。</li>
+        <li><span class="tag">[联系地址]</span> 江西省南昌市 · 南昌大学。</li>
     </ul>
 
-    <!-- ===================== Selected Publications ===================== -->
+    <!-- ===================== News ===================== -->
+    <section id="news" class="section">
+        <h2>🔥 News</h2>
+        <ul class="news-list">
+            <li><span class="date">2026</span>🎉 研究成果摘要被第 12 届国际环境与工程地球物理会议（ICEEG 2026）录用，并作会议报告。</li>
+            <li><span class="date">2026</span>🎉 第一作者 SCI 论文《A Conditional Cold Diffusion Transformer for Seismic FWI》投递遥感与地球物理国际顶刊 IEEE TGRS（在审）。</li>
+            <li><span class="date">2025</span>🎉 获研究生一等学业奖学金。</li>
+            <li><span class="date">2024</span>🎉 入学南昌大学攻读计算机技术硕士学位，获研究生一等学业奖学金。</li>
+        </ul>
+    </section>
+
+    <!-- ===================== Publications ===================== -->
     <section id="publications" class="section">
-        <h2>SELECTED PUBLICATIONS</h2>
-        <!-- TODO: 替换成你的论文列表 -->
+        <h2>📝 Publications</h2>
         <ol class="pub-list">
-            <li>Shunyao Wu, et al. "论文标题一：此处替换为你的第一篇论文题目."
-                <em>Proceedings of XX Conference (CONF 2025)</em>.</li>
-            <li>Shunyao Wu, et al. "论文标题二：此处替换为你的第二篇论文题目."
-                <em>Proceedings of XX Conference (CONF 2024)</em>.</li>
+            <li>
+                <strong>Longqiu Wu</strong>, et al. "A Conditional Cold Diffusion Transformer for Seismic FWI."
+                <em>The 12th International Conference on Environmental and Engineering Geophysics (ICEEG 2026)</em>.
+                <span class="badge badge-green">Accepted · Oral</span>
+                <p class="pub-note">
+                    提出融合确定性高斯平滑物理先验与条件冷扩散 Transformer（DiT）的地下速度建模框架，
+                    消除对初始模型的依赖，在国际权威数据集 OpenFWI 上实现 50 倍推理加速（仅需 20 步采样），
+                    反演精度与跨地质构造泛化能力显著超越现有主流模型。
+                </p>
+            </li>
+            <li>
+                <strong>Longqiu Wu</strong>, et al. "A Conditional Cold Diffusion Transformer for Seismic FWI."
+                <em>IEEE Transactions on Geoscience and Remote Sensing (TGRS)</em>.
+                <span class="badge badge-orange">Under Review</span>
+                <p class="pub-note">
+                    第一作者 SCI 论文，已投递遥感与地球物理领域国际顶级期刊 IEEE TGRS。
+                </p>
+            </li>
         </ol>
     </section>
 
-    <!-- ===================== Selected Awards ===================== -->
-    <section id="awards" class="section">
-        <h2>SELECTED AWARDS</h2>
-        <!-- TODO: 替换成你的获奖列表 -->
-        <ul class="award-list">
-            <li><strong>KDD Cup 2024</strong> — 第 X 名</li>
-            <li><strong>WSDM Cup 2024</strong> — 第 X 名</li>
-            <li><strong>Kaggle Competitions Expert</strong> — 全球排名前 2%</li>
-            <li>全国大学生数学建模竞赛 — 省级一等奖</li>
+    <!-- ===================== Projects ===================== -->
+    <section id="projects" class="section">
+        <h2>💻 Projects</h2>
+
+        <div class="entry">
+            <h3>Seismic AI Agent · 面向智能地球物理处理工作流的多智能体协同系统
+                <span class="role">— 核心开发者</span></h3>
+            <p class="meta">实验室项目 | 2026.03 – 2026.08 | LLM · LangGraph · FastAPI · FastMCP</p>
+            <ul>
+                <li>基于 LLM、LangGraph 与 FastAPI 研发嵌入式多智能体协同系统，通过自然语言指令驱动“任务规划 — 参数寻优 — 工具调度 — 质控评估”全流程闭环。</li>
+                <li>通过 FastMCP 封装 7 类地球物理工具模块，融入物理先验输出可解释推理依据。</li>
+                <li>设计大文件算存分离与异常自适应重算机制，实测信噪比提升 15 dB 以上、首事件响应延迟 &lt; 1 s。</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <h3>Bone-DevOps · 企业级自动化部署发布平台 <span class="role">— 核心研发</span></h3>
+            <p class="meta">上海钢银电子商务股份有限公司 | 2021.11 – 2023.03 | SpringBoot · Vue · Kubernetes · Docker · ZooKeeper</p>
+            <ul>
+                <li>构建面向全公司研发部门的一站式 CI/CD 容器自动化部署平台及微服务底座。</li>
+                <li>将传统阻塞式构建重构为 K8s 动态 Pod 异步构建模式，单机并发构建能力提升 3 倍以上。</li>
+                <li>独立研发声明式分布式锁、ZooKeeper 弹性定时任务及毫秒级配置热更新三大底层组件，作为公共二方库在全公司微服务体系推广接入。</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <h3>青海电网招投标全流程管理平台 <span class="role">— 后端核心开发</span></h3>
+            <p class="meta">江西博微新技术有限公司 | 2020.07 – 2021.10 | SpringBoot · MySQL · Redis · Vue</p>
+            <ul>
+                <li>建设电网物资公司全流程线上招投标系统，负责核心数据库表结构设计。</li>
+                <li>独立完成发标、评标、授标及框架协议模块的后端接口开发。</li>
+                <li>设计定时同步机制，实现电力内外网文件安全穿透下载。</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ===================== Experience ===================== -->
+    <section id="experience" class="section">
+        <h2>🧭 Experience</h2>
+
+        <div class="entry">
+            <h3>南昌大学 · 计算机技术硕士研究生 <span class="role">— 科研主研（第一作者）</span></h3>
+            <p class="meta">2024.09 – 至今 | 江西南昌</p>
+            <ul>
+                <li>主研国家/省自然科学基金项目“基于条件冷扩散 Transformer 的地震全波形反演研究”（第一作者，2024.09 – 2026.10）。</li>
+                <li>课题组负责人：统筹课题组经费报销、设备采购及校企横向课题对接，协助导师完成期刊审稿；定期组织学术例会、迎新破冰及团建活动。</li>
+                <li>网络中心研究员：负责中心设备采购安装、资产管理与日常巡检，对接跨部门信息化服务需求。</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <h3>上海钢银电子商务股份有限公司 · Java 开发工程师 <span class="role">— 基础架构部</span></h3>
+            <p class="meta">2021.11 – 2023.03 | 上海</p>
+            <ul>
+                <li>负责面向全公司各研发部门的 Bone-DevOps 自动化部署发布平台及微服务底座研发。</li>
+                <li>承担各业务部门项目上线全程技术支持、跨部门线上故障协同排查及技术群日常答疑，保障全司业务系统稳定高效交付。</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <h3>江西博微新技术有限公司 · Java 开发工程师 <span class="role">— 项目研发部</span></h3>
+            <p class="meta">2020.07 – 2021.10 | 江西南昌</p>
+            <ul>
+                <li>参与电力行业信息化系统研发，主导青海电网公司招投标在线管理平台核心业务模块后端开发。</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <h3>校园服务与志愿活动</h3>
+            <p class="meta">本科至今</p>
+            <ul>
+                <li>科技部成员（本科）：策划全院技术分享会；统筹校运动会赛事编排、物资调配及后勤协调。</li>
+                <li>志愿服务：多次参与学院考研复试志愿工作，负责考生引导、场次秩序维护；参与迎新值班、校运会、校园马拉松等志愿服务。</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ===================== Education ===================== -->
+    <section id="education" class="section">
+        <h2>📖 Education</h2>
+        <ul class="edu-list">
+            <li>
+                <strong>南昌大学</strong>（211 / “双一流”） · 计算机技术 · 全日制硕士研究生
+                <div class="meta">2024.09 – 2027.06 | 江西南昌</div>
+            </li>
+            <li>
+                <strong>江西农业大学</strong> · 软件工程 · 全日制本科
+                <div class="meta">2016.09 – 2020.07 | 江西南昌</div>
+            </li>
         </ul>
+    </section>
+
+    <!-- ===================== Honors & Awards ===================== -->
+    <section id="awards" class="section">
+        <h2>🎖 Honors &amp; Awards</h2>
+        <ul class="award-list">
+            <li>研究生一等学业奖学金（两次）。</li>
+            <li>江西省研究生数学建模竞赛 二等奖。</li>
+            <li>全国计算机技术与软件专业技术资格（水平）考试 · 中级（软件设计师）。</li>
+            <li>大学英语六级（CET-6）、大学英语四级（CET-4）。</li>
+        </ul>
+    </section>
+
+    <!-- ===================== Skills ===================== -->
+    <section id="skills" class="section">
+        <h2>🛠 Skills</h2>
+
+        <div class="skill-group">
+            <h3>后端与云原生</h3>
+            <div class="pills">
+                <span class="pill">Java</span><span class="pill">SpringBoot</span>
+                <span class="pill">SpringCloud</span><span class="pill">MyBatis</span>
+                <span class="pill">MySQL</span><span class="pill">PostgreSQL</span>
+                <span class="pill">Redis</span><span class="pill">RabbitMQ</span>
+                <span class="pill">ZooKeeper</span><span class="pill">ELK</span>
+                <span class="pill">Vue</span><span class="pill">Next.js</span>
+                <span class="pill">Linux</span><span class="pill">Docker</span>
+                <span class="pill">Kubernetes</span><span class="pill">Ansible</span>
+            </div>
+        </div>
+
+        <div class="skill-group">
+            <h3>人工智能与大模型</h3>
+            <div class="pills">
+                <span class="pill">Python</span><span class="pill">PyTorch</span>
+                <span class="pill">Transformer</span><span class="pill">U-Net</span>
+                <span class="pill">DDPM</span><span class="pill">Cold Diffusion</span>
+                <span class="pill">Diffusion Transformer</span><span class="pill">LangGraph</span>
+                <span class="pill">FastMCP</span><span class="pill">AI Agent</span>
+                <span class="pill">FastAPI</span>
+            </div>
+        </div>
+
+        <div class="skill-group">
+            <h3>文档撰写与科研绘图</h3>
+            <div class="pills">
+                <span class="pill">LaTeX</span><span class="pill">Word（IEEE 排版）</span>
+                <span class="pill">科技论文写作</span><span class="pill">Visio</span>
+                <span class="pill">Draw.io</span><span class="pill">科学数据可视化</span>
+                <span class="pill">架构设计文档</span>
+            </div>
+        </div>
     </section>
 </main>
 
-<footer>© 2026 Shunyao Wu. All rights reserved.</footer>
+<footer>© 2026 Longqiu Wu (吴龙秋). All rights reserved.</footer>
 
 </body>
 </html>
