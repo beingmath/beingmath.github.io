@@ -66,8 +66,6 @@
     }
 
     /* ===== 个人照片位（Hero 右下角圆形头像） ===== */
-    /* 圆形裁剪；竖版全身照取景锚定在照片顶部（头部位置），
-       若头部位置不理想可调 object-position 第二个值，如 center 20% */
     .avatar {
         position: absolute; right: 56px; bottom: -38px; z-index: 3;
         width: 170px; height: 170px;
@@ -76,7 +74,6 @@
         box-shadow: 0 10px 28px rgba(0, 0, 0, .35);
         background: #b6e3f4;
         object-fit: cover;
-        object-position: top center;
     }
 
     /* ================= 主内容区 ================= */
@@ -197,8 +194,7 @@
 <header id="home" class="hero">
     <h1 class="hero-title">Bridging AI and Geophysics</h1>
 
-    <!-- 个人照片：person.jpg 需与 index.html 放在同一目录；
-         圆形头像取景锚定在照片顶部（头部位置），只显示头部及上半身 -->
+    <!-- 个人照片：person.jpg 需与 index.html 放在同一目录 -->
     <img class="avatar" src="person.jpg" alt="吴龙秋个人照片">
 </header>
 
