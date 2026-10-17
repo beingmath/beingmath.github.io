@@ -65,17 +65,17 @@
         text-shadow: 0 2px 14px rgba(0, 0, 0, .55);
     }
 
-    /* ===== 个人照片位（Hero 右下角竖版照片卡片） ===== */
-    /* 宽高自动跟随照片原始比例，在限定范围内完整显示（全身照不会被裁剪） */
+    /* ===== 个人照片位（Hero 右下角圆形头像） ===== */
+    /* 圆形裁剪；竖版全身照取景锚定在照片顶部（头部位置），
+       若头部位置不理想可调 object-position 第二个值，如 center 20% */
     .avatar {
         position: absolute; right: 56px; bottom: -38px; z-index: 3;
-        width: auto; height: auto;
-        max-width: 200px; max-height: 320px;
-        border-radius: 14px;
+        width: 170px; height: 170px;
+        border-radius: 50%;
         border: 5px solid #fff;
         box-shadow: 0 10px 28px rgba(0, 0, 0, .35);
         background: #b6e3f4;
-        object-fit: contain;
+        object-fit: cover;
         object-position: top center;
     }
 
@@ -169,7 +169,7 @@
         .nav-inner { flex-direction: column; align-items: flex-start; padding: 12px 20px; }
         .nav-links { gap: 14px; }
         .hero-title { padding: 0 24px 40px; }
-        .avatar { max-width: 120px; max-height: 190px; right: 22px; bottom: -26px; border-width: 4px; }
+        .avatar { width: 110px; height: 110px; right: 22px; bottom: -26px; border-width: 4px; }
         main { padding: 68px 20px 36px; }
     }
 </style>
@@ -198,7 +198,7 @@
     <h1 class="hero-title">Bridging AI and Geophysics</h1>
 
     <!-- 个人照片：person.jpg 需与 index.html 放在同一目录；
-         照片按原始宽高比完整显示，竖版全身照不会被裁剪 -->
+         圆形头像取景锚定在照片顶部（头部位置），只显示头部及上半身 -->
     <img class="avatar" src="person.jpg" alt="吴龙秋个人照片">
 </header>
 
