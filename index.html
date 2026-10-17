@@ -65,28 +65,18 @@
         text-shadow: 0 2px 14px rgba(0, 0, 0, .55);
     }
 
-    /* ===== 个人照片位（Hero 右下角圆形头像） ===== */
+    /* ===== 个人照片位（Hero 右下角竖版照片卡片） ===== */
+    /* 宽高自动跟随照片原始比例，在限定范围内完整显示（全身照不会被裁剪） */
     .avatar {
         position: absolute; right: 56px; bottom: -38px; z-index: 3;
-        width: 170px; height: 170px;
-        border-radius: 50%;
+        width: auto; height: auto;
+        max-width: 200px; max-height: 320px;
+        border-radius: 14px;
         border: 5px solid #fff;
         box-shadow: 0 10px 28px rgba(0, 0, 0, .35);
         background: #b6e3f4;
-        object-fit: cover;
-    }
-    /* 照片占位样式：放入 photo.jpg 并替换占位块后自动失效 */
-    .avatar-ph {
-        display: flex; align-items: center; justify-content: center;
-        text-align: center;
-        background: rgba(255, 255, 255, .95);
-        border: 4px dashed #1a5fb4;
-        color: #1a5fb4;
-    }
-    .avatar-ph strong { display: block; font-size: .92rem; letter-spacing: 1px; }
-    .avatar-ph small {
-        display: block; font-size: .66rem; color: #5c7fae;
-        line-height: 1.55; margin-top: 6px; font-weight: 500;
+        object-fit: contain;
+        object-position: top center;
     }
 
     /* ================= 主内容区 ================= */
@@ -179,9 +169,7 @@
         .nav-inner { flex-direction: column; align-items: flex-start; padding: 12px 20px; }
         .nav-links { gap: 14px; }
         .hero-title { padding: 0 24px 40px; }
-        .avatar { width: 110px; height: 110px; right: 22px; bottom: -26px; border-width: 4px; }
-        .avatar-ph strong { font-size: .72rem; }
-        .avatar-ph small { font-size: .56rem; }
+        .avatar { max-width: 120px; max-height: 190px; right: 22px; bottom: -26px; border-width: 4px; }
         main { padding: 68px 20px 36px; }
     }
 </style>
@@ -209,10 +197,9 @@
 <header id="home" class="hero">
     <h1 class="hero-title">Bridging AI and Geophysics</h1>
 
-    <!-- TODO: 替换为你的个人照片：将照片命名为 photo.jpg 放到本页面同一目录，
-         然后把下面整个 <div class="avatar avatar-ph"> ... </div> 替换为：
-         <img class="avatar" src="photo.jpg" alt="吴龙秋个人照片"> -->
-     <img class="avatar" src="person.jpg" alt="吴龙秋个人照片"> 
+    <!-- 个人照片：person.jpg 需与 index.html 放在同一目录；
+         照片按原始宽高比完整显示，竖版全身照不会被裁剪 -->
+    <img class="avatar" src="person.jpg" alt="吴龙秋个人照片">
 </header>
 
 <!-- ===================== 主内容区 ===================== -->
